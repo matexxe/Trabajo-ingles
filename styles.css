@@ -1,0 +1,188 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1.25em;
+    text-align: center;
+    width: 100%; 
+}
+
+.all-entries {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; 
+    margin-bottom: 20px; 
+    text-align: center; 
+}
+
+.animated-title {
+    font-size: 2.5em;
+    margin: 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+         opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+.container {
+    width: 90%; /* Cambiado a un porcentaje para mejor responsividad */
+    max-width: 800px; /* Ancho máximo para mantener el equilibrio */
+    margin: 20px auto; /* Centrado */
+}
+
+.card-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre las tarjetas */
+}
+
+/* Animación para la aparición de las tarjetas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Las tarjetas empiezan desplazadas hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Las tarjetas vuelven a su posición original */
+    }
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px; /* Borde redondeado para cada tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 10px 0; /* Margen vertical para separación entre tarjetas */
+    transform: translateY(0); /* Inicialmente en su posición original */
+}
+
+.card:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más grande */
+    transform: translateY(-10px); /* Mueve la tarjeta hacia arriba al pasar el cursor */
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.post {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px; /* Borde redondeado para las publicaciones */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para las publicaciones */
+}
+
+.post.active {
+    display: block;
+}
+
+footer {
+    background-color: #333; /* Color de fondo oscuro para el footer */
+    color: #fff; /* Color de texto blanco para el footer */
+    text-align: center; /* Centra el texto */
+    padding: 20px 15px; /* Añade relleno para mayor comodidad */
+    margin: 0;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Añade una sombra para destacarlo */
+}
+
+.copyrigth {
+    color: #FFFFFF; /* Asegura que el texto sea blanco */
+    font-size: 15px; /* Ajusta el tamaño de la fuente */
+    margin: 0; /* Elimina el margen para que el texto se alinee correctamente */
+}
+
+/* Ajuste de box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.post img.image-right {
+    float: right; /* Alinea la imagen a la izquierda */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    margin-bottom: 10px; /* Espacio debajo de la imagen para separar del texto siguiente */
+    max-width: 450px; /* Limita el tamaño máximo de la imagen */
+    height: 260px; /* Mantiene la proporción de la imagen */
+    
+}
+.post img.image-left {
+    float: left; /* Alinea la imagen a la izquierda */
+    margin-right: 20px; /* Espacio entre la imagen y el texto a la derecha */
+    margin-bottom: 10px; /* Espacio debajo de la imagen para separar del texto siguiente */
+    max-width: 450px; /* Limita el tamaño máximo de la imagen */
+    height: 260px; /* Mantiene la proporción de la imagen */
+}
+.post img.crimen {
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    margin-bottom: 10px; /* Espacio debajo de la imagen para separar del texto siguiente */
+    max-width: 450px; /* Limita el tamaño máximo de la imagen */
+    height: 260px; /* Mantiene la proporción de la imagen */
+}
+
+
+
+/* Asegura que el contenedor de la publicación se ajuste al contenido flotante */
+.post {
+    overflow: hidden;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .card-list {
+        display: block;
+    }
+
+    .card {
+        margin-bottom: 20px; /* Margen inferior para tarjetas en móviles */
+    }
+    .post img.image-right,
+    .post img.image-left,
+    .post img.crimen {
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin-bottom: 10px; /* Espacio debajo de la imagen para separar del texto siguiente */
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen al ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+    iframe {
+        max-width: 100%;
+        height: auto;
+        border: none;
+        display: block;
+        margin: 0 auto; 
+        aspect-ratio: 16 / 9; 
+    }
+
+    footer {
+        padding: 25px 10px; /* Ajusta el padding en dispositivos móviles para mejor visibilidad */
+        font-size: 14px; /* Ajusta el tamaño de la fuente si es necesario */
+    }
+}
